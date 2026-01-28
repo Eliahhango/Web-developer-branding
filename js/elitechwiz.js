@@ -3,10 +3,10 @@
 const el = (tag, props, ...children) => h(tag, props, ...children);
 
 const profile = {
-  name: 'Eliah "EliTechWiz" Hango',
+  name: '"EliTechWiz"',
   role: 'Web Developer & Civil Engineering Student',
   tagline: 'Building modern, responsive web applications informed by engineering and cybersecurity principles.',
-  bio: 'Eliah "EliTechWiz" Hango - Web Developer & Civil Engineering Student with a focus on secure modern web solutions and cybersecurity.',
+  bio: 'EliTechWiz - Web Developer & Civil Engineering Student with a focus on secure modern web solutions and cybersecurity.',
   email: 'your.email@example.com',
   location: 'Remote worldwide',
   links: [

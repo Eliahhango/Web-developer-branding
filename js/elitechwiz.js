@@ -3,7 +3,7 @@
 const el = (tag, props, ...children) => h(tag, props, ...children);
 
 const profile = {
-  name: '"EliTechWiz"',
+  name: 'EliTechWiz',
   role: 'Web Developer & Civil Engineering Student',
   tagline: 'Building modern, responsive web applications informed by engineering and cybersecurity principles.',
   bio: 'EliTechWiz - Web Developer & Civil Engineering Student with a focus on secure modern web solutions and cybersecurity.',
@@ -130,6 +130,66 @@ const pricingPlans = [
   }
 ];
 
+const trustLogos = [
+  { src: 'images/WebWorld-logo-bily.png', alt: 'WebWorld logo' },
+  { src: 'images/World-of-internet-logo.png', alt: 'World of Internet logo' },
+  { src: 'images/WebWorld-digitalni-agentura.png', alt: 'WebWorld digital agency logo' },
+  { src: 'images/Lowkostak-cestovatelsky-portal-logo-e1613418878998.png', alt: 'Lowkostak travel portal logo' }
+];
+
+const deliverables = [
+  {
+    title: 'UX + Content',
+    text: 'Information architecture, page map, and copy polish for clarity.',
+    icon: 'images/address-book.png'
+  },
+  {
+    title: 'UI Design',
+    text: 'Visual system, responsive layouts, and component styling.',
+    icon: 'images/application-image.png'
+  },
+  {
+    title: 'Development',
+    text: 'Semantic HTML, performant CSS/JS, and optimized assets.',
+    icon: 'images/control.png'
+  },
+  {
+    title: 'QA + Launch',
+    text: 'Cross-device testing, SEO check, deployment support.',
+    icon: 'images/rocket.png'
+  }
+];
+
+const ctaHighlights = ['Free 20-min discovery call', 'Fixed-price scopes', 'Launch-ready handoff'];
+
+const legalLinks = [
+  {
+    title: 'Privacy Policy',
+    href: 'privacy.html',
+    description: 'How data is handled on this site.'
+  },
+  {
+    title: 'Terms of Service',
+    href: 'terms.html',
+    description: 'General terms for services and site use.'
+  },
+  {
+    title: 'Service Agreement',
+    href: 'service-agreement.html',
+    description: 'Engagement scope, payments, and delivery.'
+  },
+  {
+    title: 'License & Usage',
+    href: 'license.html',
+    description: 'Copyright and permitted use guidelines.'
+  },
+  {
+    title: 'Error Page',
+    href: '404.html',
+    description: 'Preview the custom 404 experience.'
+  }
+];
+
 const steps = [
   {
     title: 'Discovery',
@@ -216,7 +276,7 @@ const faqs = [
 const stack = ['HTML', 'CSS', 'JavaScript', 'React', 'Vite', 'Accessibility', 'Performance', 'Security'];
 
 const buildNote =
-  'Site built with modern frontend tooling. Consider upgrading to a Vite or Next.js production build structure for performance and maintainability.';
+  'Built with modern frontend tooling focused on performance, accessibility, and maintainability.';
 
 const currentYear = new Date().getFullYear();
 
@@ -229,16 +289,32 @@ function SectionHead(props) {
 }
 
 function Header() {
-  return el('header', { className: 'site-header' },
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return el('header', { className: `site-header${menuOpen ? ' open' : ''}` },
     el('div', { className: 'container header-inner' },
       el('a', { className: 'brand', href: '#top' },
         el('span', { className: 'brand-mark' }, 'E'),
         el('span', { className: 'brand-name' }, 'EliTechWiz')
       ),
-      el('nav', { className: 'nav-links', 'aria-label': 'Primary' },
-        navItems.map((item) => el('a', { href: item.href, key: item.href }, item.label))
+      el('nav', { className: 'nav-links', id: 'primary-nav', 'aria-label': 'Primary' },
+        navItems.map((item) => el('a', { href: item.href, key: item.href, onClick: () => setMenuOpen(false) }, item.label))
       ),
-      el('a', { className: 'btn btn-primary', href: '#contact' }, 'Start a project')
+      el('div', { className: 'header-actions' },
+        el('a', { className: 'btn btn-primary', href: '#contact' }, 'Start a project'),
+        el('button', {
+          className: 'nav-toggle',
+          type: 'button',
+          'aria-label': 'Toggle navigation',
+          'aria-controls': 'primary-nav',
+          'aria-expanded': menuOpen,
+          onClick: () => setMenuOpen(!menuOpen)
+        },
+        el('span', { className: 'nav-toggle-bar' }),
+        el('span', { className: 'nav-toggle-bar' }),
+        el('span', { className: 'nav-toggle-bar' })
+        )
+      )
     )
   );
 }
@@ -286,6 +362,19 @@ function Highlights() {
         el('h3', null, item.title),
         el('p', null, item.text)
       ))
+    )
+  );
+}
+
+function Trust() {
+  return el('section', { className: 'strip trust-strip' },
+    el('div', { className: 'container trust-inner' },
+      el('p', { className: 'eyebrow' }, 'Trusted by'),
+      el('div', { className: 'trust-logos' },
+        trustLogos.map((logo) => el('div', { className: 'trust-logo', key: logo.src },
+          el('img', { src: logo.src, alt: logo.alt, loading: 'lazy' })
+        ))
+      )
     )
   );
 }
@@ -418,6 +507,27 @@ function Pricing() {
   );
 }
 
+function Deliverables() {
+  return el('section', { className: 'section', id: 'deliverables' },
+    el('div', { className: 'container' },
+      el(SectionHead, {
+        kicker: 'Deliverables',
+        title: 'Everything you get with a build',
+        text: 'A clear handoff with assets, documentation, and support so you can launch confidently.'
+      }),
+      el('div', { className: 'grid grid-4 deliverables-grid' },
+        deliverables.map((item) => el('div', { className: 'card deliverable-card', key: item.title },
+          el('span', { className: 'deliverable-icon' },
+            el('img', { src: item.icon, alt: '' })
+          ),
+          el('h3', null, item.title),
+          el('p', null, item.text)
+        ))
+      )
+    )
+  );
+}
+
 function Process() {
   return el('section', { className: 'section', id: 'process' },
     el('div', { className: 'container' },
@@ -526,6 +636,46 @@ function FAQ() {
   );
 }
 
+function Legal() {
+  return el('section', { className: 'section', id: 'legal' },
+    el('div', { className: 'container' },
+      el(SectionHead, {
+        kicker: 'Legal',
+        title: 'Policies, agreements, and usage',
+        text: 'Clear policies so you know how projects, data, and deliverables are handled.'
+      }),
+      el('div', { className: 'legal-grid' },
+        legalLinks.map((link) => el('a', { className: 'card legal-card', href: link.href, key: link.title },
+          el('h3', null, link.title),
+          el('p', null, link.description),
+          el('span', { className: 'legal-cta' }, 'View details')
+        ))
+      )
+    )
+  );
+}
+
+function CTA() {
+  return el('section', { className: 'section cta' },
+    el('div', { className: 'container' },
+      el('div', { className: 'cta-band' },
+        el('div', { className: 'cta-copy' },
+          el('p', { className: 'eyebrow' }, 'Ready to launch?'),
+          el('h2', null, 'Bring your next web project to life.'),
+          el('p', null, 'From first brief to launch day, you get a clean process, secure build, and a polished final product.'),
+          el('div', { className: 'cta-list' },
+            ctaHighlights.map((item) => el('span', { className: 'cta-pill', key: item }, item))
+          )
+        ),
+        el('div', { className: 'cta-actions' },
+          el('a', { className: 'btn btn-primary', href: '#contact' }, 'Book a discovery call'),
+          el('a', { className: 'btn btn-ghost', href: '#pricing' }, 'See pricing')
+        )
+      )
+    )
+  );
+}
+
 function ContactForm() {
   const [sent, setSent] = useState(false);
 
@@ -591,9 +741,24 @@ function Contact() {
 function Footer() {
   return el('footer', { className: 'site-footer' },
     el('div', { className: 'container footer-inner' },
-      el('span', { className: 'footer-muted' }, profile.name),
-      el('span', { className: 'footer-muted' }, profile.role),
-      el('span', { className: 'footer-muted' }, `Copyright ${currentYear} EliTechWiz`)
+      el('div', { className: 'footer-brand' },
+        el('strong', { className: 'footer-title' }, profile.name),
+        el('span', { className: 'footer-muted' }, profile.role),
+        el('span', { className: 'footer-muted' }, `Copyright ${currentYear} EliTechWiz`)
+      ),
+      el('div', { className: 'footer-links' },
+        el('span', { className: 'footer-title' }, 'Legal'),
+        el('div', { className: 'footer-link-list' },
+          legalLinks.slice(0, 4).map((link) =>
+            el('a', { className: 'footer-link', href: link.href, key: `footer-${link.title}` }, link.title)
+          )
+        )
+      ),
+      el('div', { className: 'footer-links' },
+        el('span', { className: 'footer-title' }, 'Contact'),
+        el('a', { className: 'footer-link', href: `mailto:${profile.email}` }, profile.email),
+        el('span', { className: 'footer-muted' }, profile.location)
+      )
     )
   );
 }
@@ -604,15 +769,19 @@ function App() {
     el('main', null,
       el(Hero),
       el(Highlights),
+      el(Trust),
       el(About),
       el(Services),
       el(Features),
+      el(Deliverables),
       el(Pricing),
       el(Process),
       el(Work),
       el(Stack),
       el(Testimonials),
       el(FAQ),
+      el(Legal),
+      el(CTA),
       el(Contact)
     ),
     el(Footer)

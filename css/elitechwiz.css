@@ -76,7 +76,7 @@ img {
 }
 
 .legal-list li::before {
-  content: '•';
+  content: '-';
   color: var(--accent-2);
   margin-right: 8px;
 }
@@ -850,7 +850,7 @@ img {
 }
 
 .pricing-list li::before {
-  content: '•';
+  content: '-';
   color: var(--accent-2);
   margin-right: 8px;
 }

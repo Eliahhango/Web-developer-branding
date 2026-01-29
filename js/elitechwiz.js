@@ -4,11 +4,11 @@ const el = (tag, props, ...children) => h(tag, props, ...children);
 
 const profile = {
   name: 'EliTechWiz',
-  role: 'Web Developer & Civil Engineering Student',
-  tagline: 'Building modern, responsive web applications informed by engineering and cybersecurity principles.',
-  bio: 'EliTechWiz - Web Developer & Civil Engineering Student with a focus on secure modern web solutions and cybersecurity.',
+  role: 'Web Developer + Civil Engineering Student',
+  tagline: 'I build fast, clean websites that feel effortless to use, grounded in engineering and security.',
+  bio: "I'm EliTechWiz, a web developer and civil engineering student. I care about clear design, sturdy code, and sites people can trust.",
   email: 'your.email@example.com',
-  location: 'Remote worldwide',
+  location: 'Remote / open to global clients',
   links: [
     { label: 'Portfolio', href: 'https://elitechwiz.site' },
     { label: 'GitHub', href: 'https://github.com/Eliahhango' },
@@ -23,76 +23,76 @@ const navItems = [
   { label: 'Pricing', href: '#pricing' },
   { label: 'Process', href: '#process' },
   { label: 'Work', href: '#work' },
-  { label: 'Stack', href: '#stack' },
+  { label: 'Tools', href: '#stack' },
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' }
 ];
 
-const heroPills = ['Security-minded', 'Responsive', 'Performance', 'SEO ready'];
+const heroPills = ['Secure-by-default', 'Mobile-first', 'Speed tuned', 'SEO-friendly'];
 
 const highlights = [
   {
-    title: 'Security-aware builds',
-    text: 'Modern web experiences shaped by cybersecurity principles.'
+    title: 'Security you can feel',
+    text: 'No scary warnings, just solid, sensible protection under the hood.'
   },
   {
-    title: 'Engineering mindset',
-    text: 'Structured thinking and clean systems behind every UI.'
+    title: 'Engineering thinking',
+    text: 'Structured layouts, tidy code, and a build that stays stable.'
   },
   {
-    title: 'Performance tuned',
-    text: 'Fast load times and smooth interactions by design.'
+    title: 'Speed without drama',
+    text: 'Pages that load quickly and stay smooth on real devices.'
   }
 ];
 
 const services = [
   {
     title: 'Custom Websites',
-    text: 'Marketing sites, portfolios, and landing pages built to convert.'
+    text: 'Marketing sites, portfolios, and landing pages with a clear story.'
   },
   {
     title: 'Web Apps',
-    text: 'Interactive React apps with clear UX and scalable UI.'
+    text: 'React apps built for real users, not just demos.'
   },
   {
     title: 'UI Engineering',
-    text: 'Component systems and pixel-perfect builds from design.'
+    text: 'Precise, maintainable UI from Figma or an existing design.'
   },
   {
     title: 'Optimization',
-    text: 'Accessibility, speed, and technical SEO improvements.'
+    text: 'Speed, accessibility, and SEO fixes that actually move the needle.'
   }
 ];
 
 const featureHighlights = [
   {
-    title: 'Security-first builds',
-    text: 'Hardened headers, OWASP-aware checks, and secure-by-default patterns.',
+    title: 'Security that starts early',
+    text: 'Headers, form validation, and sensible defaults baked in.',
     icon: 'images/plus-shield.png'
   },
   {
-    title: 'Performance focus',
-    text: 'Core Web Vitals optimization, clean assets, and fast load times.',
+    title: 'Performance that sticks',
+    text: 'Lean assets, smart loading, and careful CSS.',
     icon: 'images/rocket.png'
   },
   {
-    title: 'SEO-ready structure',
-    text: 'Semantic markup, metadata, and on-page SEO foundations.',
+    title: 'SEO foundations',
+    text: 'Semantics, metadata, and clean structure, no duct tape.',
     icon: 'images/chart-pie.png'
   },
   {
-    title: 'Analytics + insight',
-    text: 'Event tracking and funnel visibility so you can measure growth.',
+    title: 'Analytics that help',
+    text: 'Track what matters so decisions are easier.',
     icon: 'images/chart.png'
   }
 ];
 
 const metrics = [
-  { value: '7-10 days', label: 'Typical launch window' },
-  { value: '90+ score', label: 'Performance target' },
-  { value: '100%', label: 'Responsive coverage' },
-  { value: '24/7', label: 'Monitoring add-on' }
+  { value: '1-2 weeks', label: 'Typical launch' },
+  { value: '90+ Lighthouse', label: 'Performance target' },
+  { value: 'All screen sizes', label: 'Responsive coverage' },
+  { value: 'Monthly care', label: 'Optional support' }
 ];
 
 const pricingPlans = [
@@ -100,19 +100,19 @@ const pricingPlans = [
     name: 'Starter',
     price: '$350',
     period: 'one-time',
-    description: 'Single-page site built for quick launches.',
-    features: ['1-3 sections', 'Mobile responsive', 'Basic SEO setup', 'Launch in 5 days']
+    description: 'A crisp one-pager to get you online fast.',
+    features: ['1-3 sections', 'Mobile + tablet ready', 'Basic SEO setup', '~5 day delivery']
   },
   {
     name: 'Growth',
     price: '$950',
     period: 'one-time',
-    description: 'Multi-page brand site with conversion focus.',
+    description: 'Multi-page site with clear structure and conversions.',
     features: [
       'Up to 6 pages',
-      'Performance + accessibility pass',
-      'Security hardening',
-      'Launch in 10 days'
+      'Accessibility + performance pass',
+      'Security checklist',
+      '~10 day delivery'
     ],
     featured: true
   },
@@ -120,12 +120,12 @@ const pricingPlans = [
     name: 'Secure Web App',
     price: '$2,500',
     period: 'starting at',
-    description: 'Custom web app with auth and integrations.',
+    description: 'Custom app build for products and internal tools.',
     features: [
       'React app build',
       'API integration',
-      'Role-based access',
-      'Launch in 3-4 weeks'
+      'Auth + roles',
+      '3-4 week build'
     ]
   }
 ];
@@ -140,43 +140,43 @@ const trustLogos = [
 const deliverables = [
   {
     title: 'UX + Content',
-    text: 'Information architecture, page map, and copy polish for clarity.',
+    text: 'Site map, page structure, and copy polish.',
     icon: 'images/address-book.png'
   },
   {
     title: 'UI Design',
-    text: 'Visual system, responsive layouts, and component styling.',
+    text: 'Responsive layouts + a simple visual system.',
     icon: 'images/application-image.png'
   },
   {
     title: 'Development',
-    text: 'Semantic HTML, performant CSS/JS, and optimized assets.',
+    text: 'Semantic HTML, clean CSS, optimized assets.',
     icon: 'images/control.png'
   },
   {
     title: 'QA + Launch',
-    text: 'Cross-device testing, SEO check, deployment support.',
+    text: 'Cross-device testing, SEO check, go-live support.',
     icon: 'images/rocket.png'
   }
 ];
 
-const ctaHighlights = ['Free 20-min discovery call', 'Fixed-price scopes', 'Launch-ready handoff'];
+const ctaHighlights = ['Quick kickoff call', 'Fixed scope + timeline', 'Clean handoff'];
 
 const legalLinks = [
   {
     title: 'Privacy Policy',
     href: 'privacy.html',
-    description: 'How data is handled on this site.'
+    description: 'How information is handled on this site.'
   },
   {
     title: 'Terms of Service',
     href: 'terms.html',
-    description: 'General terms for services and site use.'
+    description: 'How the site and services are used.'
   },
   {
     title: 'Service Agreement',
     href: 'service-agreement.html',
-    description: 'Engagement scope, payments, and delivery.'
+    description: 'Scope, payments, and delivery expectations.'
   },
   {
     title: 'License & Usage',
@@ -193,40 +193,40 @@ const legalLinks = [
 const steps = [
   {
     title: 'Discovery',
-    text: 'Clarify goals, users, and the story you want to tell.'
+    text: 'A short call to align on goals and audience.'
   },
   {
     title: 'Design',
-    text: 'Create a clean visual system and wireframes that flow.'
+    text: 'Wireframes and a visual direction you can react to.'
   },
   {
     title: 'Build',
-    text: 'Develop fast, accessible, and maintainable code.'
+    text: 'Solid, accessible code with performance in mind.'
   },
   {
     title: 'Launch',
-    text: 'Polish, deploy, and keep improving after release.'
+    text: 'QA, deploy, and a tidy handoff.'
   }
 ];
 
 const projects = [
   {
     title: 'Launch Site',
-    text: 'A bold landing page focused on sign-ups and clarity.',
+    text: 'A sharp landing page built to turn visitors into leads.',
     tags: ['Landing', 'Brand', 'Conversion'],
     image: 'images/01_Home_03.png',
     alt: 'Marketing landing page layout'
   },
   {
     title: 'Client Portal',
-    text: 'A dashboard UI that makes key data easy to read.',
+    text: 'A dashboard that makes key numbers obvious.',
     tags: ['Dashboard', 'UI', 'React'],
     image: 'images/Jak-Promu-vubec-funguje.png',
     alt: 'Analytics dashboard interface'
   },
   {
     title: 'Ecommerce Refresh',
-    text: 'A storefront rebuild for faster browsing and checkout.',
+    text: 'A storefront rebuild focused on speed and checkout flow.',
     tags: ['Commerce', 'Performance', 'UX'],
     image: 'images/Navrhneme-vam-veskerou-grafiku.png',
     alt: 'Ecommerce storefront redesign'
@@ -237,19 +237,19 @@ const testimonials = [
   {
     name: 'Renata S.',
     role: 'Founder, Coastline Studio',
-    text: 'EliTechWiz delivered a polished brand site with noticeable speed and clarity improvements.',
+    text: 'The site feels premium and loads fast. Communication was easy the whole way.',
     avatar: 'images/Renata-Silhava-150x150.jpg'
   },
   {
     name: 'Pavlina S.',
     role: 'Copywriter',
-    text: 'The new layout increased engagement and finally reflects our voice clearly.',
+    text: 'Finally a layout that sounds like us. We saw better engagement in week one.',
     avatar: 'images/Pavlina-Siroka-copywriterka-WebWorld.cz_-150x150.jpg'
   },
   {
     name: 'Jiri M.',
     role: 'Product Lead',
-    text: 'Fast delivery, strong communication, and a secure build process we could trust.',
+    text: 'Fast turnaround, clear updates, and a build we trusted in production.',
     avatar: 'images/Jiri-Mraz-150x150.png'
   }
 ];
@@ -257,26 +257,26 @@ const testimonials = [
 const faqs = [
   {
     question: 'How quickly can we start?',
-    answer: 'After a short discovery call, I can usually begin within 3-5 days.'
+    answer: 'Usually within a week after a quick kickoff call.'
   },
   {
     question: 'Do you offer hosting and maintenance?',
-    answer: 'Yes. I can set up hosting, monitoring, backups, and ongoing updates.'
+    answer: 'Yes, hosting, monitoring, and updates are available.'
   },
   {
     question: 'Can you build from my design or Figma file?',
-    answer: 'Absolutely. I can implement your design system or collaborate to refine it.'
+    answer: 'Yes. I can build from your Figma file or refine it together.'
   },
   {
     question: 'What do you need from me to begin?',
-    answer: 'A clear goal, example references you like, and any brand assets you already have.'
+    answer: 'A goal, a few references you like, and any brand assets you have.'
   }
 ];
 
-const stack = ['HTML', 'CSS', 'JavaScript', 'React', 'Vite', 'Accessibility', 'Performance', 'Security'];
+const stack = ['HTML', 'CSS', 'JavaScript', 'React', 'Accessibility', 'Performance', 'SEO', 'Security'];
 
 const buildNote =
-  'Built with modern frontend tooling focused on performance, accessibility, and maintainability.';
+  'Kept lean on purpose: accessible, fast, and easy to maintain.';
 
 const currentYear = new Date().getFullYear();
 
@@ -324,7 +324,7 @@ function Hero() {
     el('div', { className: 'container hero-grid' },
       el('div', { className: 'hero-copy' },
         el('p', { className: 'eyebrow' }, `${profile.name} / Web Developer`),
-        el('h1', { className: 'hero-title' }, 'Secure, modern websites built for real-world impact.'),
+        el('h1', { className: 'hero-title' }, 'Websites that look sharp, load fast, and feel safe.'),
         el('p', { className: 'lead' }, profile.tagline),
         el('div', { className: 'hero-actions' },
           el('a', { className: 'btn btn-primary', href: '#contact' }, 'Start a project'),
@@ -342,7 +342,7 @@ function Hero() {
             alt: 'Developer workspace with modern web interface'
           }),
           el('div', { className: 'hero-float hero-float-top' },
-            el('span', { className: 'hero-float-label' }, 'Security scan'),
+            el('span', { className: 'hero-float-label' }, 'Security check'),
             el('strong', null, 'Passed')
           ),
           el('div', { className: 'hero-float hero-float-bottom' },
@@ -369,7 +369,7 @@ function Highlights() {
 function Trust() {
   return el('section', { className: 'strip trust-strip' },
     el('div', { className: 'container trust-inner' },
-      el('p', { className: 'eyebrow' }, 'Trusted by'),
+      el('p', { className: 'eyebrow' }, 'Worked with'),
       el('div', { className: 'trust-logos' },
         trustLogos.map((logo) => el('div', { className: 'trust-logo', key: logo.src },
           el('img', { src: logo.src, alt: logo.alt, loading: 'lazy' })
@@ -391,11 +391,11 @@ function About() {
         el('div', { className: 'card' },
           el('h3', null, 'Focus'),
           el('p', null, profile.tagline),
-          el('p', null, 'I build secure, modern web solutions with a clean UX and a resilient foundation.')
+          el('p', null, 'Clean UX, sturdy code, and a calm build process.')
         ),
         el('div', { className: 'card' },
-          el('h3', null, 'Brand mark'),
-          el('p', null, 'Simple text-based brand mark "EliTechWiz"; logo coming soon.'),
+          el('h3', null, 'Brand mark (for now)'),
+          el('p', null, 'Text-based mark while the logo is in progress.'),
           el('div', { className: 'brand-mark-text' }, 'EliTechWiz'),
           el('div', { className: 'link-list' },
             profile.links.map((link) =>
@@ -413,8 +413,8 @@ function Services() {
     el('div', { className: 'container' },
       el(SectionHead, {
         kicker: 'Services',
-        title: 'What I build',
-        text: 'Focused services for brands that want a modern, high-impact web presence.'
+        title: 'What I do',
+        text: 'Focused help for brands that want a modern site without the fuss.'
       }),
       el('div', { className: 'grid grid-4' },
         services.map((service) => el('div', { className: 'card', key: service.title },
@@ -432,8 +432,8 @@ function Features() {
       el('div', null,
         el(SectionHead, {
           kicker: 'Features',
-          title: 'Built for growth and security',
-          text: 'Every build focuses on speed, clarity, and security so your site performs from day one.'
+          title: 'Built to last (and load fast)',
+          text: 'Small details add up: speed, security, and a clean experience.'
         }),
         el('div', { className: 'feature-list' },
           featureHighlights.map((feature) => el('div', { className: 'feature-item', key: feature.title },
@@ -461,7 +461,7 @@ function Features() {
           loading: 'lazy'
         }),
         el('div', { className: 'feature-badges' },
-          el('span', { className: 'badge' }, 'Figma to React'),
+          el('span', { className: 'badge' }, 'From Figma to React'),
           el('span', { className: 'badge' }, 'Security review'),
           el('span', { className: 'badge' }, 'QA checklist')
         )
@@ -475,8 +475,8 @@ function Pricing() {
     el('div', { className: 'container' },
       el(SectionHead, {
         kicker: 'Pricing',
-        title: 'Clear packages for every stage',
-        text: 'Simple, transparent pricing so you know what you are investing in.'
+        title: 'Simple pricing',
+        text: 'Clear packages and no surprises. Custom quotes if your scope is different.'
       }),
       el('div', { className: 'pricing-grid' },
         pricingPlans.map((plan) => {
@@ -498,8 +498,8 @@ function Pricing() {
       ),
       el('div', { className: 'pricing-foot' },
         el('div', null,
-          el('strong', null, 'Need something custom?'),
-          el('p', null, 'Share your scope and timeline for a tailored quote.')
+          el('strong', null, 'Need a different scope?'),
+          el('p', null, 'Tell me what you need and I will quote it.')
         ),
         el('a', { className: 'btn btn-primary', href: '#contact' }, 'Request a quote')
       )
@@ -512,8 +512,8 @@ function Deliverables() {
     el('div', { className: 'container' },
       el(SectionHead, {
         kicker: 'Deliverables',
-        title: 'Everything you get with a build',
-        text: 'A clear handoff with assets, documentation, and support so you can launch confidently.'
+        title: 'What you get',
+        text: 'Everything you need to launch, plus a clean handoff.'
       }),
       el('div', { className: 'grid grid-4 deliverables-grid' },
         deliverables.map((item) => el('div', { className: 'card deliverable-card', key: item.title },
@@ -533,8 +533,8 @@ function Process() {
     el('div', { className: 'container' },
       el(SectionHead, {
         kicker: 'Process',
-        title: 'Clear steps, zero chaos',
-        text: 'A streamlined workflow to keep projects moving and clients informed.'
+        title: 'A simple process',
+        text: 'Short cycles, quick feedback, no chaos.'
       }),
       el('div', { className: 'process-list' },
         steps.map((step, index) => el('div', { className: 'process-step', key: step.title },
@@ -554,8 +554,8 @@ function Work() {
     el('div', { className: 'container' },
       el(SectionHead, {
         kicker: 'Work',
-        title: 'Selected builds',
-        text: 'A snapshot of the kind of projects I love to craft.'
+        title: 'Recent work',
+        text: 'A few examples of what I build for clients.'
       }),
       el('div', { className: 'grid grid-3' },
         projects.map((project) => el('div', { className: 'card work-card', key: project.title },
@@ -577,9 +577,9 @@ function Stack() {
   return el('section', { className: 'section', id: 'stack' },
     el('div', { className: 'container' },
       el(SectionHead, {
-        kicker: 'Toolbox',
-        title: 'Modern web stack',
-        text: 'Tools and practices that keep projects fast, clean, and future-ready.'
+        kicker: 'Tools',
+        title: 'Tools I use',
+        text: 'A practical stack that keeps builds fast and maintainable.'
       }),
       el('div', { className: 'stack' },
         stack.map((item) => el('span', { className: 'chip', key: item }, item))
@@ -594,8 +594,8 @@ function Testimonials() {
     el('div', { className: 'container' },
       el(SectionHead, {
         kicker: 'Testimonials',
-        title: 'Client stories and outcomes',
-        text: 'A few highlights from past collaborations and launches.'
+        title: 'Nice words from clients',
+        text: 'Short notes from people I have worked with.'
       }),
       el('div', { className: 'testimonial-grid' },
         testimonials.map((testimonial) => el('div', { className: 'testimonial-card', key: testimonial.name },
@@ -623,8 +623,8 @@ function FAQ() {
     el('div', { className: 'container' },
       el(SectionHead, {
         kicker: 'FAQ',
-        title: 'Common questions',
-        text: 'Quick answers to help you plan your next web project.'
+        title: 'Questions, answered',
+        text: 'If you are wondering, it is probably here.'
       }),
       el('div', { className: 'faq-grid' },
         faqs.map((faq) => el('div', { className: 'faq-item', key: faq.question },
@@ -641,8 +641,8 @@ function Legal() {
     el('div', { className: 'container' },
       el(SectionHead, {
         kicker: 'Legal',
-        title: 'Policies, agreements, and usage',
-        text: 'Clear policies so you know how projects, data, and deliverables are handled.'
+        title: 'Policies & agreements',
+        text: 'Clear rules so everyone knows what to expect.'
       }),
       el('div', { className: 'legal-grid' },
         legalLinks.map((link) => el('a', { className: 'card legal-card', href: link.href, key: link.title },
@@ -660,16 +660,16 @@ function CTA() {
     el('div', { className: 'container' },
       el('div', { className: 'cta-band' },
         el('div', { className: 'cta-copy' },
-          el('p', { className: 'eyebrow' }, 'Ready to launch?'),
-          el('h2', null, 'Bring your next web project to life.'),
-          el('p', null, 'From first brief to launch day, you get a clean process, secure build, and a polished final product.'),
+          el('p', { className: 'eyebrow' }, "Let's build"),
+          el('h2', null, 'Ready to get started?'),
+          el('p', null, "Tell me what you're building and I will map the best path."),
           el('div', { className: 'cta-list' },
             ctaHighlights.map((item) => el('span', { className: 'cta-pill', key: item }, item))
           )
         ),
         el('div', { className: 'cta-actions' },
-          el('a', { className: 'btn btn-primary', href: '#contact' }, 'Book a discovery call'),
-          el('a', { className: 'btn btn-ghost', href: '#pricing' }, 'See pricing')
+          el('a', { className: 'btn btn-primary', href: '#contact' }, "Let's talk"),
+          el('a', { className: 'btn btn-ghost', href: '#pricing' }, 'View pricing')
         )
       )
     )
@@ -695,7 +695,7 @@ function ContactForm() {
     ),
     el('div', { className: 'form-row' },
       el('label', { htmlFor: 'message' }, 'Project details'),
-      el('textarea', { id: 'message', name: 'message', placeholder: 'Tell me about your goals, scope, and timeline.' })
+      el('textarea', { id: 'message', name: 'message', placeholder: 'Quick note about the project, timeline, and budget (if you have it).' })
     ),
     el('button', { className: 'btn btn-primary', type: 'submit' }, sent ? 'Message sent' : 'Send message'),
     sent ? el('p', { className: 'form-note' }, 'Thanks for reaching out. I will reply soon.') : null
@@ -707,18 +707,18 @@ function Contact() {
     el('div', { className: 'container' },
       el(SectionHead, {
         kicker: 'Contact',
-        title: 'Tell me about your project',
-        text: 'Share what you need and I will craft a plan for the build.'
+        title: "Tell me what you're building",
+        text: 'Share the basics and I will reply with a plan and estimate.'
       }),
       el('div', { className: 'contact-grid' },
         el('div', { className: 'contact-card' },
           el('h3', null, 'Project details'),
-          el('p', null, 'I respond with a clear plan, timeline, and next steps.'),
+          el('p', null, 'I respond with scope, timeline, and next steps.'),
           el(ContactForm)
         ),
         el('div', { className: 'contact-card' },
           el('h3', null, "Let's build together"),
-          el('p', null, profile.role),
+          el('p', null, 'Available for new projects'),
           el('p', null, 'Email: ', el('a', { className: 'link-inline', href: `mailto:${profile.email}` }, profile.email)),
           el('p', null, `Location: ${profile.location}`),
           el('div', { className: 'link-list' },

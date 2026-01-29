@@ -19,9 +19,13 @@ const profile = {
 const navItems = [
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
+  { label: 'Features', href: '#features' },
+  { label: 'Pricing', href: '#pricing' },
   { label: 'Process', href: '#process' },
   { label: 'Work', href: '#work' },
   { label: 'Stack', href: '#stack' },
+  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' }
 ];
 
@@ -61,6 +65,71 @@ const services = [
   }
 ];
 
+const featureHighlights = [
+  {
+    title: 'Security-first builds',
+    text: 'Hardened headers, OWASP-aware checks, and secure-by-default patterns.',
+    icon: 'images/plus-shield.png'
+  },
+  {
+    title: 'Performance focus',
+    text: 'Core Web Vitals optimization, clean assets, and fast load times.',
+    icon: 'images/rocket.png'
+  },
+  {
+    title: 'SEO-ready structure',
+    text: 'Semantic markup, metadata, and on-page SEO foundations.',
+    icon: 'images/chart-pie.png'
+  },
+  {
+    title: 'Analytics + insight',
+    text: 'Event tracking and funnel visibility so you can measure growth.',
+    icon: 'images/chart.png'
+  }
+];
+
+const metrics = [
+  { value: '7-10 days', label: 'Typical launch window' },
+  { value: '90+ score', label: 'Performance target' },
+  { value: '100%', label: 'Responsive coverage' },
+  { value: '24/7', label: 'Monitoring add-on' }
+];
+
+const pricingPlans = [
+  {
+    name: 'Starter',
+    price: '$350',
+    period: 'one-time',
+    description: 'Single-page site built for quick launches.',
+    features: ['1-3 sections', 'Mobile responsive', 'Basic SEO setup', 'Launch in 5 days']
+  },
+  {
+    name: 'Growth',
+    price: '$950',
+    period: 'one-time',
+    description: 'Multi-page brand site with conversion focus.',
+    features: [
+      'Up to 6 pages',
+      'Performance + accessibility pass',
+      'Security hardening',
+      'Launch in 10 days'
+    ],
+    featured: true
+  },
+  {
+    name: 'Secure Web App',
+    price: '$2,500',
+    period: 'starting at',
+    description: 'Custom web app with auth and integrations.',
+    features: [
+      'React app build',
+      'API integration',
+      'Role-based access',
+      'Launch in 3-4 weeks'
+    ]
+  }
+];
+
 const steps = [
   {
     title: 'Discovery',
@@ -84,17 +153,63 @@ const projects = [
   {
     title: 'Launch Site',
     text: 'A bold landing page focused on sign-ups and clarity.',
-    tags: ['Landing', 'Brand', 'Conversion']
+    tags: ['Landing', 'Brand', 'Conversion'],
+    image: 'images/01_Home_03.png',
+    alt: 'Marketing landing page layout'
   },
   {
     title: 'Client Portal',
     text: 'A dashboard UI that makes key data easy to read.',
-    tags: ['Dashboard', 'UI', 'React']
+    tags: ['Dashboard', 'UI', 'React'],
+    image: 'images/Jak-Promu-vubec-funguje.png',
+    alt: 'Analytics dashboard interface'
   },
   {
     title: 'Ecommerce Refresh',
     text: 'A storefront rebuild for faster browsing and checkout.',
-    tags: ['Commerce', 'Performance', 'UX']
+    tags: ['Commerce', 'Performance', 'UX'],
+    image: 'images/Navrhneme-vam-veskerou-grafiku.png',
+    alt: 'Ecommerce storefront redesign'
+  }
+];
+
+const testimonials = [
+  {
+    name: 'Renata S.',
+    role: 'Founder, Coastline Studio',
+    text: 'EliTechWiz delivered a polished brand site with noticeable speed and clarity improvements.',
+    avatar: 'images/Renata-Silhava-150x150.jpg'
+  },
+  {
+    name: 'Pavlina S.',
+    role: 'Copywriter',
+    text: 'The new layout increased engagement and finally reflects our voice clearly.',
+    avatar: 'images/Pavlina-Siroka-copywriterka-WebWorld.cz_-150x150.jpg'
+  },
+  {
+    name: 'Jiri M.',
+    role: 'Product Lead',
+    text: 'Fast delivery, strong communication, and a secure build process we could trust.',
+    avatar: 'images/Jiri-Mraz-150x150.png'
+  }
+];
+
+const faqs = [
+  {
+    question: 'How quickly can we start?',
+    answer: 'After a short discovery call, I can usually begin within 3-5 days.'
+  },
+  {
+    question: 'Do you offer hosting and maintenance?',
+    answer: 'Yes. I can set up hosting, monitoring, backups, and ongoing updates.'
+  },
+  {
+    question: 'Can you build from my design or Figma file?',
+    answer: 'Absolutely. I can implement your design system or collaborate to refine it.'
+  },
+  {
+    question: 'What do you need from me to begin?',
+    answer: 'A clear goal, example references you like, and any brand assets you already have.'
   }
 ];
 
@@ -144,24 +259,19 @@ function Hero() {
         )
       ),
       el('div', { className: 'hero-visual' },
-        el('div', { className: 'hero-card' },
-          el('div', { className: 'hero-card-top' },
-            el('span', { className: 'dot' }),
-            el('span', { className: 'dot b' }),
-            el('span', { className: 'dot c' }),
-            el('span', { className: 'hero-card-title' }, 'Build status')
+        el('div', { className: 'hero-media' },
+          el('img', {
+            className: 'hero-image',
+            src: 'images/S-cim-Promu-pomuze-500x498.png',
+            alt: 'Developer workspace with modern web interface'
+          }),
+          el('div', { className: 'hero-float hero-float-top' },
+            el('span', { className: 'hero-float-label' }, 'Security scan'),
+            el('strong', null, 'Passed')
           ),
-          el('div', { className: 'hero-card-body' },
-            el('span', { className: 'code-line wide' }),
-            el('span', { className: 'code-line mid' }),
-            el('span', { className: 'code-line wide' }),
-            el('span', { className: 'code-line short' }),
-            el('span', { className: 'code-line mid' })
-          ),
-          el('div', { className: 'hero-card-footer' },
-            el('span', { className: 'badge' }, 'React UI'),
-            el('span', { className: 'badge' }, 'Fast load'),
-            el('span', { className: 'badge' }, 'Clean code')
+          el('div', { className: 'hero-float hero-float-bottom' },
+            el('span', { className: 'hero-float-label' }, 'Page speed'),
+            el('strong', null, '90+ score')
           )
         )
       )
@@ -227,6 +337,87 @@ function Services() {
   );
 }
 
+function Features() {
+  return el('section', { className: 'section', id: 'features' },
+    el('div', { className: 'container feature-grid' },
+      el('div', null,
+        el(SectionHead, {
+          kicker: 'Features',
+          title: 'Built for growth and security',
+          text: 'Every build focuses on speed, clarity, and security so your site performs from day one.'
+        }),
+        el('div', { className: 'feature-list' },
+          featureHighlights.map((feature) => el('div', { className: 'feature-item', key: feature.title },
+            el('span', { className: 'feature-icon' },
+              el('img', { src: feature.icon, alt: '' })
+            ),
+            el('div', null,
+              el('h4', null, feature.title),
+              el('p', null, feature.text)
+            )
+          ))
+        ),
+        el('div', { className: 'metric-grid' },
+          metrics.map((metric) => el('div', { className: 'metric-card', key: metric.label },
+            el('strong', null, metric.value),
+            el('span', null, metric.label)
+          ))
+        )
+      ),
+      el('div', { className: 'feature-media' },
+        el('img', {
+          className: 'feature-image',
+          src: 'images/section_03_02.png',
+          alt: 'Interface design preview',
+          loading: 'lazy'
+        }),
+        el('div', { className: 'feature-badges' },
+          el('span', { className: 'badge' }, 'Figma to React'),
+          el('span', { className: 'badge' }, 'Security review'),
+          el('span', { className: 'badge' }, 'QA checklist')
+        )
+      )
+    )
+  );
+}
+
+function Pricing() {
+  return el('section', { className: 'section pricing', id: 'pricing' },
+    el('div', { className: 'container' },
+      el(SectionHead, {
+        kicker: 'Pricing',
+        title: 'Clear packages for every stage',
+        text: 'Simple, transparent pricing so you know what you are investing in.'
+      }),
+      el('div', { className: 'pricing-grid' },
+        pricingPlans.map((plan) => {
+          const cardClass = `pricing-card${plan.featured ? ' featured' : ''}`;
+          return el('div', { className: cardClass, key: plan.name },
+            plan.featured ? el('span', { className: 'pricing-tag' }, 'Most popular') : null,
+            el('div', { className: 'pricing-header' },
+              el('h3', null, plan.name),
+              el('p', { className: 'pricing-desc' }, plan.description)
+            ),
+            el('div', { className: 'pricing-price' }, plan.price),
+            el('span', { className: 'pricing-period' }, plan.period),
+            el('ul', { className: 'pricing-list' },
+              plan.features.map((feature) => el('li', { key: feature }, feature))
+            ),
+            el('a', { className: 'btn btn-ghost', href: '#contact' }, 'Get started')
+          );
+        })
+      ),
+      el('div', { className: 'pricing-foot' },
+        el('div', null,
+          el('strong', null, 'Need something custom?'),
+          el('p', null, 'Share your scope and timeline for a tailored quote.')
+        ),
+        el('a', { className: 'btn btn-primary', href: '#contact' }, 'Request a quote')
+      )
+    )
+  );
+}
+
 function Process() {
   return el('section', { className: 'section', id: 'process' },
     el('div', { className: 'container' },
@@ -258,7 +449,9 @@ function Work() {
       }),
       el('div', { className: 'grid grid-3' },
         projects.map((project) => el('div', { className: 'card work-card', key: project.title },
-          el('div', { className: 'work-thumb' }),
+          el('div', { className: 'work-thumb' },
+            el('img', { src: project.image, alt: project.alt, loading: 'lazy' })
+          ),
           el('h3', null, project.title),
           el('p', null, project.text),
           el('div', { className: 'tag-row' },
@@ -282,6 +475,53 @@ function Stack() {
         stack.map((item) => el('span', { className: 'chip', key: item }, item))
       ),
       el('p', { className: 'note' }, buildNote)
+    )
+  );
+}
+
+function Testimonials() {
+  return el('section', { className: 'section', id: 'testimonials' },
+    el('div', { className: 'container' },
+      el(SectionHead, {
+        kicker: 'Testimonials',
+        title: 'Client stories and outcomes',
+        text: 'A few highlights from past collaborations and launches.'
+      }),
+      el('div', { className: 'testimonial-grid' },
+        testimonials.map((testimonial) => el('div', { className: 'testimonial-card', key: testimonial.name },
+          el('p', { className: 'testimonial-quote' }, `"${testimonial.text}"`),
+          el('div', { className: 'testimonial-profile' },
+            el('img', {
+              className: 'testimonial-avatar',
+              src: testimonial.avatar,
+              alt: `${testimonial.name} portrait`,
+              loading: 'lazy'
+            }),
+            el('div', null,
+              el('strong', null, testimonial.name),
+              el('p', { className: 'testimonial-meta' }, testimonial.role)
+            )
+          )
+        ))
+      )
+    )
+  );
+}
+
+function FAQ() {
+  return el('section', { className: 'section', id: 'faq' },
+    el('div', { className: 'container' },
+      el(SectionHead, {
+        kicker: 'FAQ',
+        title: 'Common questions',
+        text: 'Quick answers to help you plan your next web project.'
+      }),
+      el('div', { className: 'faq-grid' },
+        faqs.map((faq) => el('div', { className: 'faq-item', key: faq.question },
+          el('h4', null, faq.question),
+          el('p', null, faq.answer)
+        ))
+      )
     )
   );
 }
@@ -366,9 +606,13 @@ function App() {
       el(Highlights),
       el(About),
       el(Services),
+      el(Features),
+      el(Pricing),
       el(Process),
       el(Work),
       el(Stack),
+      el(Testimonials),
+      el(FAQ),
       el(Contact)
     ),
     el(Footer)
